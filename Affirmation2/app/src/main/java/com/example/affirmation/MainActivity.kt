@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    AffirmationCardPreview()
                 }
             }
         }
@@ -54,12 +54,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     AffirmationTheme {
-        Greeting("Android")
+        AffirmationCardPreview()
     }
 }
 @Composable
 fun AffirmationsApp() {
 }
+
 
 @Composable
 fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
@@ -80,4 +81,10 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
             )
         }
     }
+}
+
+@Preview
+@Composable
+private fun AffirmationCardPreview() {
+    AffirmationCard(Affirmation(R.string.affirmation1, R.drawable.image1))
 }
